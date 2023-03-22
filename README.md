@@ -10,7 +10,7 @@
  · API From : [TMDB](https://www.themoviedb.org)
   
  
-### App UI :    
+### Screenshots :    
   
   <div>
   
