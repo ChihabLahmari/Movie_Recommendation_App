@@ -1,12 +1,7 @@
-import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:movies_clean_architecture_mvvm/app/constants.dart';
 import 'package:movies_clean_architecture_mvvm/app/di.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/common/state_renderer/state_renderer_impl.dart';
@@ -17,7 +12,6 @@ import 'package:movies_clean_architecture_mvvm/presentation/resources/values_man
 import 'package:shimmer/shimmer.dart';
 
 import '../../../data/network/offline_movies.dart';
-import '../../../domain/model/movie_object.dart';
 import '../../resources/color_manager.dart';
 
 class MainView extends StatefulWidget {
@@ -115,7 +109,7 @@ class _MainViewState extends State<MainView> {
                               Rect.fromLTRB(0, 0, rect.width, rect.height),
                             );
                           },
-                          blendMode: BlendMode.dstIn,
+                          blendMode: BlendMode.dstIn, 
                           // child: Image.network(
                           //   '${Constants.imageUrl}${item.image}',
                           //   height: AppSize.s550,

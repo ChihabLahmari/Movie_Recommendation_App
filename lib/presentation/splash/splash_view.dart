@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/resources/assets_manager.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/resources/color_manager.dart';

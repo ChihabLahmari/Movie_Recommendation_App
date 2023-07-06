@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies_clean_architecture_mvvm/app/constants.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/resources/app_strings.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/resources/assets_manager.dart';
 import 'package:movies_clean_architecture_mvvm/presentation/resources/color_manager.dart';
-import 'package:movies_clean_architecture_mvvm/presentation/resources/font_manager.dart';
 
-import '../../resources/styles_manager.dart';
 import '../../resources/values_manager.dart';
 
 enum StateRendererType {
@@ -32,7 +28,7 @@ class StateRenderer extends StatelessWidget {
   String title;
   Function retryFunction;
 
-  StateRenderer({
+  StateRenderer({super.key, 
     required this.stateRendererType,
     this.message = AppStrings.loading,
     this.title = Constants.empty,

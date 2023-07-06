@@ -1,9 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:movies_clean_architecture_mvvm/domain/model/movie_object.dart';
@@ -49,8 +46,7 @@ class _AllMoviesViewState extends State<AllMoviesView> {
                 itemBuilder: (context, index) {
                   MovieObject movie = widget.list[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: AppSize.s6, horizontal: AppSize.s10),
+                    padding: const EdgeInsets.symmetric(vertical: AppSize.s6, horizontal: AppSize.s10),
                     child: InkWell(
                       onTap: () {
                         Navigator.pushNamed(
@@ -70,41 +66,35 @@ class _AllMoviesViewState extends State<AllMoviesView> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Expanded(
-                                flex: 1,
+                                flex: 2,
                                 child: ClipRRect(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(AppSize.s8)),
+                                  borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
                                   child: CachedNetworkImage(
-                                    imageUrl:
-                                        "${Constants.imageUrl}${movie.image}",
+                                    imageUrl: "${Constants.imageUrl}${movie.image}",
                                     height: 150.0,
-                                    width: 100.0,
+                                    // width: 50,
                                     fit: BoxFit.cover,
-                                    placeholder: (context, url) =>
-                                        Shimmer.fromColors(
+                                    placeholder: (context, url) => Shimmer.fromColors(
                                       baseColor: Colors.grey[850]!,
                                       highlightColor: Colors.grey[800]!,
                                       child: Container(
                                         height: AppSize.s150,
-                                        width: AppSize.s100,
+                                        // width: AppSize.s150,
                                         decoration: BoxDecoration(
                                           color: Colors.black,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(8.0),
                                         ),
                                       ),
                                     ),
-                                    errorWidget: (context, url, error) =>
-                                        Shimmer.fromColors(
+                                    errorWidget: (context, url, error) => Shimmer.fromColors(
                                       baseColor: Colors.grey[850]!,
                                       highlightColor: Colors.grey[800]!,
                                       child: Container(
                                         height: AppSize.s150,
-                                        width: AppSize.s100,
+                                        // width: AppSize.s150,
                                         decoration: BoxDecoration(
                                           color: Colors.black,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(8.0),
                                         ),
                                       ),
                                     ),
@@ -113,7 +103,7 @@ class _AllMoviesViewState extends State<AllMoviesView> {
                               ),
                               const SizedBox(width: AppSize.s14),
                               Expanded(
-                                flex: 3,
+                                flex: 4,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -130,15 +120,13 @@ class _AllMoviesViewState extends State<AllMoviesView> {
                                     ),
                                     const SizedBox(height: AppSize.s12),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Container(
                                           height: AppSize.s25,
                                           width: AppSize.s45,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                AppSize.s5),
+                                            borderRadius: BorderRadius.circular(AppSize.s5),
                                             color: ColorManager.red,
                                           ),
                                           child: Center(

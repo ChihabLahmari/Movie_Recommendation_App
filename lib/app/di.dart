@@ -16,22 +16,18 @@ Future<void> initAppModule() async {
     () => NetworkInfoImpl(InternetConnectionChecker()),
   );
 
-  instance
-      .registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
+  instance.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
 
-  instance.registerLazySingleton<Repository>(
-      () => RepositoryImpl(instance(), instance()));
+  instance.registerLazySingleton<Repository>(() => RepositoryImpl(instance(), instance()));
 }
 
 initMainModel() {
   if (!GetIt.I.isRegistered<NowPlayingUseCase>()) {
-    instance.registerFactory<NowPlayingUseCase>(
-        () => NowPlayingUseCase(instance()));
+    instance.registerFactory<NowPlayingUseCase>(() => NowPlayingUseCase(instance()));
     instance.registerFactory<PopularUseCase>(() => PopularUseCase(instance()));
-    instance
-        .registerFactory<TopRatedUseCase>(() => TopRatedUseCase(instance()));
+    instance.registerFactory<TopRatedUseCase>(() => TopRatedUseCase(instance()));
 
-    instance.registerFactory<MainViewModel>(
-        () => MainViewModel(instance(), instance(), instance()));
+    instance
+        .registerFactory<MainViewModel>(() => MainViewModel(instance(), instance(), instance()));
   }
 }

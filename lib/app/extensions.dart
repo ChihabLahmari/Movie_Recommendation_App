@@ -1,5 +1,4 @@
 import 'package:movies_clean_architecture_mvvm/app/constants.dart';
-import 'package:movies_clean_architecture_mvvm/presentation/resources/constants.dart';
 
 extension NoNullString on String? {
   String orEmpty() {

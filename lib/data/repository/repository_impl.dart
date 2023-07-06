@@ -2,15 +2,14 @@ import 'package:movies_clean_architecture_mvvm/data/data_source/remote_data_sour
 import 'package:movies_clean_architecture_mvvm/data/mapper/mapper.dart';
 import 'package:movies_clean_architecture_mvvm/data/network/error_handler.dart';
 import 'package:movies_clean_architecture_mvvm/data/network/network_info.dart';
-import 'package:movies_clean_architecture_mvvm/data/response/movie_response.dart';
 import 'package:movies_clean_architecture_mvvm/domain/model/movie_object.dart';
 import 'package:movies_clean_architecture_mvvm/data/network/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:movies_clean_architecture_mvvm/domain/repository/repository.dart';
 
 class RepositoryImpl extends Repository {
-  RemoteDataSource _remoteDataSource;
-  NetworkInfo _networkInfo;
+  final RemoteDataSource _remoteDataSource;
+  final NetworkInfo _networkInfo;
 
   RepositoryImpl(this._remoteDataSource, this._networkInfo);
 

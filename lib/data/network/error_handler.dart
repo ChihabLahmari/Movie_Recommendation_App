@@ -19,13 +19,11 @@ class ErrorHandler implements Exception {
 Failure _handleError(DioError error) {
   switch (error.type) {
     case DioErrorType.connectionTimeout:
-      return Failure(
-          ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT);
+      return Failure(ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT);
     case DioErrorType.sendTimeout:
       return Failure(ResponseCode.SEND_TIMEOUT, ResponseMessage.SEND_TIMEOUT);
     case DioErrorType.receiveTimeout:
-      return Failure(
-          ResponseCode.RECIEVE_TIMEOUT, ResponseMessage.RECIEVE_TIMEOUT);
+      return Failure(ResponseCode.RECIEVE_TIMEOUT, ResponseMessage.RECIEVE_TIMEOUT);
 
     // response from the API :
     case DioErrorType.badResponse:
@@ -85,23 +83,19 @@ extension DataSourceExtension on DataSource {
       case DataSource.NOT_FOUND:
         return Failure(ResponseCode.NOT_FOUND, ResponseMessage.NOT_FOUND);
       case DataSource.INTERNAL_SERVER_ERROR:
-        return Failure(ResponseCode.INTERNAL_SERVER_ERROR,
-            ResponseMessage.INTERNAL_SERVER_ERROR);
+        return Failure(ResponseCode.INTERNAL_SERVER_ERROR, ResponseMessage.INTERNAL_SERVER_ERROR);
       case DataSource.CONNECT_TIMEOUT:
-        return Failure(
-            ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT);
+        return Failure(ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT);
       case DataSource.CANCEL:
         return Failure(ResponseCode.CANCEL, ResponseMessage.CANCEL);
       case DataSource.RECIEVE_TIMEOUT:
-        return Failure(
-            ResponseCode.RECIEVE_TIMEOUT, ResponseMessage.RECIEVE_TIMEOUT);
+        return Failure(ResponseCode.RECIEVE_TIMEOUT, ResponseMessage.RECIEVE_TIMEOUT);
       case DataSource.SEND_TIMEOUT:
         return Failure(ResponseCode.SEND_TIMEOUT, ResponseMessage.SEND_TIMEOUT);
       case DataSource.CACHE_ERROR:
         return Failure(ResponseCode.CACHE_ERROR, ResponseMessage.CACHE_ERROR);
       case DataSource.NO_INTERNET_CONNECTION:
-        return Failure(ResponseCode.NO_INTERNET_CONNECTION,
-            ResponseMessage.NO_INTERNET_CONNECTION);
+        return Failure(ResponseCode.NO_INTERNET_CONNECTION, ResponseMessage.NO_INTERNET_CONNECTION);
       case DataSource.DEFAULT:
         return Failure(ResponseCode.DEFAULT, ResponseMessage.DEFAULT);
     }
@@ -131,8 +125,7 @@ class ResponseCode {
 
 class ResponseMessage {
   static const String SUCCESS = 'success'; // success with data
-  static const String NO_CONTENT =
-      'success'; //  success with no data no content
+  static const String NO_CONTENT = 'success'; //  success with no data no content
   static const String BAR_REQUEST =
       'Bad request, Try again later'; // failure , API rejected request
   static const String UNAUTORISED =
@@ -150,8 +143,7 @@ class ResponseMessage {
   static const String RECIEVE_TIMEOUT = 'Time out error, Try again later';
   static const String SEND_TIMEOUT = 'Time out error, Try again later';
   static const String CACHE_ERROR = 'Cashe error, Try again later';
-  static const String NO_INTERNET_CONNECTION =
-      'Pleac check your internet connection';
+  static const String NO_INTERNET_CONNECTION = 'Pleac check your internet connection';
   static const String DEFAULT = 'Some thing went wrong, Try again later';
 }
 

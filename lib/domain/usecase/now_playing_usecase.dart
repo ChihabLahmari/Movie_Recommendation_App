@@ -5,7 +5,7 @@ import 'package:movies_clean_architecture_mvvm/domain/repository/repository.dart
 import 'package:movies_clean_architecture_mvvm/domain/usecase/base_usecase.dart';
 
 class NowPlayingUseCase implements BaseUseCase<List<MovieObject>> {
-  Repository _repository;
+  final Repository _repository;
   NowPlayingUseCase(this._repository);
 
   @override

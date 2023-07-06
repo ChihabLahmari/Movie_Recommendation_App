@@ -5,7 +5,7 @@ import 'package:movies_clean_architecture_mvvm/domain/repository/repository.dart
 import 'package:movies_clean_architecture_mvvm/domain/usecase/base_usecase.dart';
 
 class PopularUseCase extends BaseUseCase {
-  Repository _repository;
+  final Repository _repository;
   PopularUseCase(this._repository);
 
   @override

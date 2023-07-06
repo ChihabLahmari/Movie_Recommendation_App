@@ -3,7 +3,6 @@ import 'dart:async';
 
 import 'package:movies_clean_architecture_mvvm/domain/usecase/popular_usecase.dart';
 import 'package:movies_clean_architecture_mvvm/domain/usecase/top_rated_usecase.dart';
-import 'package:movies_clean_architecture_mvvm/data/network/offline_movies.dart';
 import 'package:rxdart/subjects.dart';
 
 import 'package:movies_clean_architecture_mvvm/domain/model/movie_object.dart';
@@ -14,9 +13,9 @@ import 'package:movies_clean_architecture_mvvm/presentation/common/state_rendere
 
 class MainViewModel extends BaseViewModel
     with MainViewModelInputs, MainViewModelOutputs {
-  NowPlayingUseCase _nowPlayingUseCase;
-  PopularUseCase _popularUseCase;
-  TopRatedUseCase _topRatedUseCase;
+  final NowPlayingUseCase _nowPlayingUseCase;
+  final PopularUseCase _popularUseCase;
+  final TopRatedUseCase _topRatedUseCase;
   MainViewModel(
       this._nowPlayingUseCase, this._popularUseCase, this._topRatedUseCase);
 
